@@ -29,12 +29,6 @@
 └── README.md         # dokumentacja
 ```
 
-- **Strona główna** – powitanie i rozpoczęcie przygody
-- **Dashboard** – menu główne z sekcjami:
-  - **Historie Kotów** – bajkowe opowieści o Rudym i Szarku
-  - **Galeria** – slider ze zdjęciami kotków
-  - **Porady Opieki** – praktyczne wskazówki dla opiekunów małych kotów
-  - **Kocie Ciekawostki** – interesujące fakty i anegdoty
 
 ## 🚀 Jak uruchomić lokalnie
 
