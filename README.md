@@ -1,5 +1,7 @@
 # 🐾 Kici World
 
+**Demo online:** [https://kici-world.web.app/](https://kici-world.web.app/)
+
 **Kici World** to nowoczesna, responsywna aplikacja webowa poświęcona kotom Rudy i Szarek. Projekt łączy elementy bajkowe, edukacyjne i praktyczne, prezentując historie, galerię zdjęć, porady opieki oraz ciekawostki o kotach.
 
 ---
