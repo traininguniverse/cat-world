@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 Kotusia Gra 🐱</title>
+    <link rel="stylesheet" href="game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">🐱 Kotusia Gra 🐱</h1>
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">Punkty:</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Życia:</span>
+                    <span id="lives" class="stat-value">❤️❤️❤️</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Poziom:</span>
+                    <span id="level" class="stat-value">1</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <div id="startScreen" class="screen">
+                <h2>🐱 Kotusia Gra 🐱</h2>
+                <p>Steruj kotkiem i zbieraj smakołyki!</p>
+                <p>Unikaj przeszkód i zostań mistrzem!</p>
+                <div class="controls">
+                    <p>🎮 Sterowanie:</p>
+                    <p>← → - Ruch w lewo/prawo</p>
+                    <p>↑ ↓ - Ruch w górę/dół</p>
+                    <p>SPACJA - Pauza</p>
+                    <p><strong>💡 Wskazówka: Kliknij na obszar gry, aby aktywować sterowanie!</strong></p>
+                </div>
+                <button id="startButton" class="game-button">🎮 Rozpocznij Grę!</button>
+            </div>
+
+            <div id="pauseScreen" class="screen hidden">
+                <h2>⏸️ Gra Wstrzymana</h2>
+                <p>Naciśnij SPACJĘ, aby kontynuować</p>
+                <button id="resumeButton" class="game-button">▶️ Kontynuuj</button>
+            </div>
+
+            <div id="gameOverScreen" class="screen hidden">
+                <h2>😿 Koniec Gry</h2>
+                <p>Twój wynik: <span id="finalScore">0</span> punktów</p>
+                <p>Poziom: <span id="finalLevel">1</span></p>
+                <button id="restartButton" class="game-button">🔄 Zagraj Ponownie</button>
+                <button id="backToMenuButton" class="game-button">🏠 Menu Główne</button>
+            </div>
+
+            <div id="levelCompleteScreen" class="screen hidden">
+                <h2>🎉 Poziom Ukończony!</h2>
+                <p>Gratulacje! Przeszedłeś poziom <span id="completedLevel">1</span>!</p>
+                <p>Punkty: <span id="levelScore">0</span></p>
+                <button id="nextLevelButton" class="game-button">➡️ Następny Poziom</button>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="power-ups">
+                <h3>🔋 Power-upy:</h3>
+                <div class="power-up-item">
+                    <span>🐟</span> - +10 punktów
+                </div>
+                <div class="power-up-item">
+                    <span>🥛</span> - +1 życie
+                </div>
+                <div class="power-up-item">
+                    <span>⭐</span> - Tarcza (5 sekund)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html> 

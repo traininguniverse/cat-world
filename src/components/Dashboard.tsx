@@ -78,6 +78,12 @@ const Dashboard: React.FC = () => {
       title: "Kocie Ciekawostki",
       description: "Interesujące fakty i anegdoty ze świata kotów",
       path: "/facts"
+    },
+    {
+      title: "Więcej kocich zabaw – animacje i gra",
+      description: "Odkryj dodatkowe animacje i kocią grę!",
+      external: true,
+      url: "https://cat-world-2.web.app/"
     }
   ];
 
@@ -90,7 +96,13 @@ const Dashboard: React.FC = () => {
         {menuItems.map((item, index) => (
           <MenuCard 
             key={index}
-            onClick={() => navigate(item.path)}
+            onClick={() => {
+              if (item.external && item.url) {
+                window.open(item.url, '_blank');
+              } else if (item.path) {
+                navigate(item.path);
+              }
+            }}
           >
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
