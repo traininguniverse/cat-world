@@ -206,11 +206,56 @@ const stories = {
       </>
     ),
     image: "/images/Sennik kotów nad nocnym niebem.png"
+  },
+  planetx: {
+    title: "PlanetX – pierwsze kroki w nowym świecie",
+    content: (
+      <>
+        <p>
+          Rudy spojrzał w bezkresną przestrzeń przed sobą. Planeta była piękna, ale groźna – nie miała 
+          jeszcze przyciągania ziemskiego. Krople wody fruwały w powietrzu niczym małe, świecące kulki, 
+          a każdy oddech wymagał maski.
+        </p>
+
+        <p>
+          — Szarku, jeśli nie znajdziemy sposobu na grawitację, będziemy się tu bujać jak w kosmicznym 
+          oceanarium! — mruknął Rudy, próbując złapać wirującą kroplę wody.
+        </p>
+
+        <p>
+          Szarek spojrzał w dal i zauważył dziwne błyski na horyzoncie.
+          — Rudy… tam, przy tych skałach, coś się rusza. To chyba… lokalni mieszkańcy PlanetyX?
+        </p>
+
+        <p>
+          Nagle przed nimi pojawiły się postacie – niewielcy kosmici, przypominający… koty w hełmach 
+          kosmicznych! 😺👽
+          — Witajcie na PlanetX — powiedział jeden z nich. — Widzę, że nie macie jeszcze grawitacji 
+          ani źródeł wody. Może pomożemy wam przetrwać… jeśli obiecacie, że nie zrzucicie na nas 
+          żadnej próbki ziemskiego sera.
+        </p>
+
+        <p>
+          Rudy i Szarek spojrzeli po sobie i kiwnęli głowami.
+          — Umowa stoi — odpowiedział Rudy. — Ale najpierw musimy poradzić sobie z „próżniową 
+          samotnością" — tym dziwnym uczuciem, które sprawia, że czujemy się mali wobec całego kosmosu.
+        </p>
+
+        <p>
+          I tak zaczęła się ich pierwsza misja: połączyć ludzką wiedzę i kosmiczne umiejętności 
+          kotopodobnych mieszkańców, aby stworzyć PlanetX, gdzie życie mogłoby naprawdę zakwitnąć.
+        </p>
+      </>
+    ),
+    images: [
+      "/images/Dwa_koty_na_obcej_planecie.png",
+      "/images/Koty_na_obcej_planecie_w_kosmosie.png"
+    ]
   }
 };
 
 const CatStories: React.FC = () => {
-  const [activeStory, setActiveStory] = useState<'garden' | 'stars'>('garden');
+  const [activeStory, setActiveStory] = useState<'garden' | 'stars' | 'planetx'>('garden');
   const navigate = useNavigate();
 
   return (
@@ -234,16 +279,35 @@ const CatStories: React.FC = () => {
           >
             Gwiaździsta Noc
           </StoryButton>
+          <StoryButton 
+            active={activeStory === 'planetx'} 
+            onClick={() => setActiveStory('planetx')}
+          >
+            PlanetX
+          </StoryButton>
         </StoryMenu>
 
         <StoryText>
           {stories[activeStory].content}
         </StoryText>
 
-        <StoryImage 
-          src={stories[activeStory].image}
-          alt={stories[activeStory].title}
-        />
+        {activeStory === 'planetx' ? (
+          <>
+            <StoryImage 
+              src={stories[activeStory].images[0]}
+              alt={stories[activeStory].title}
+            />
+            <StoryImage 
+              src={stories[activeStory].images[1]}
+              alt={stories[activeStory].title}
+            />
+          </>
+        ) : (
+          <StoryImage 
+            src={stories[activeStory].image}
+            alt={stories[activeStory].title}
+          />
+        )}
       </StoryContent>
     </StoryContainer>
   );
