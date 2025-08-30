@@ -20,8 +20,13 @@
 
 ```
 ├── public/           # pliki statyczne (w tym zdjęcia do galerii)
+│   └── images/       # obrazy do historii i galerii
+│       ├── Dwa_koty_na_obcej_planecie.png    # nowy obraz PlanetX
+│       ├── Koty_na_obcej_planecie_w_kosmosie.png  # nowy obraz PlanetX
+│       └── ...       # pozostałe obrazy
 ├── src/
 │   ├── components/   # komponenty React (Dashboard, Galeria, Historie, Porady, Ciekawostki)
+│   │   └── CatStories.tsx  # komponent z nową historią PlanetX
 │   ├── App.tsx       # główny komponent z routingiem
 │   └── ...
 ├── firebase.json     # konfiguracja Firebase Hosting (rewrites dla SPA)
@@ -60,16 +65,35 @@
    firebase deploy
    ```
 
+**Aplikacja jest dostępna pod adresem:** [https://kici-world.web.app/](https://kici-world.web.app/)
+
 ---
 
 ## ✨ Funkcjonalności
 
 - **Strona główna** – powitanie i rozpoczęcie przygody
 - **Dashboard** – menu główne z sekcjami:
-  - **Historie Kotów** – bajkowe opowieści o Rudym i Szarku (podsekcje)
+  - **Historie Kotów** – bajkowe opowieści o Rudym i Szarku:
+    - "Przygoda Rudego i Szarka: Tajemniczy Ogród" – magiczna przygoda w sekretnym ogrodzie
+    - "Przygoda Rudego i Szarka: Gwiaździsta Noc" – kosmiczna przygoda ze spadającą gwiazdą
+    - "PlanetX – pierwsze kroki w nowym świecie" – kosmiczna misja na obcej planecie z kotopodobnymi kosmitami
   - **Galeria** – slider ze zdjęciami kotków
   - **Porady Opieki** – praktyczne wskazówki dla opiekunów małych kotów
   - **Kocie Ciekawostki** – interesujące fakty i anegdoty
+
+---
+
+## 🆕 Najnowsze aktualizacje
+
+### v1.1.0 - Kosmiczna przygoda PlanetX
+- **Nowa historia**: "PlanetX – pierwsze kroki w nowym świecie"
+  - Kosmiczna przygoda Rudego i Szarka na obcej planecie
+  - Spotkanie z kotopodobnymi kosmitami w hełmach kosmicznych
+  - Dwa nowe obrazy: koty na obcej planecie i w kosmosie
+- **Ulepszenia techniczne**:
+  - Obsługa wielu obrazków w jednej historii
+  - Lepsze zarządzanie stanem komponentów
+  - Zoptymalizowane wdrażanie na Firebase
 
 ---
 
@@ -97,6 +121,10 @@ Poniżej przykładowe widoki aplikacji:
 ### Historie Kotów
 ![Historia 1](screenshots/story1.png)
 ![Historia 2](screenshots/story2.png)
+
+**Nowa historia PlanetX:**
+- Obrazek 1: Dwa koty na obcej planecie
+- Obrazek 2: Koty w kosmosie z hełmami kosmicznymi
 
 ### Galeria (slider)
 ![Galeria 1](screenshots/gallery1.png)
